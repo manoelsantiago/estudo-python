@@ -13,7 +13,7 @@ from time import sleep
 
 webbrowser.open_new_tab('https://cursoautomacao.netlify.app/')
 sleep(1)
-pyautogui.moveTo(934,373,duration=1)
+pyautogui.moveTo(934,373,duration=0.5)
 pyautogui.scroll(-770)
 centro = pyautogui.locateCenterOnScreen('seunome.png')
 pyautogui.click(centro[0],centro[1],duration=2)
