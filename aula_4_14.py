@@ -11,9 +11,41 @@ import webbrowser
 import pyautogui
 from time import sleep
 
+nome = 'Manoel Santiago'
+
+# abrir site
 webbrowser.open_new_tab('https://cursoautomacao.netlify.app/')
-sleep(1)
+sleep(3)
 pyautogui.moveTo(934,373,duration=0.5)
 pyautogui.scroll(-770)
+
+# localizar o campo nome e escrever nome e clicar em alerta
 centro = pyautogui.locateCenterOnScreen('seunome.png')
-pyautogui.click(centro[0],centro[1],duration=2)
+pyautogui.click(centro[0],centro[1],duration=1)
+pyautogui.typewrite(nome)
+centro = pyautogui.locateCenterOnScreen('botaoAlerta.png')
+sleep(1)
+pyautogui.click(centro[0],centro[1], duration=1)
+sleep(1)
+# fechar o alerta
+centro = pyautogui.locateCenterOnScreen('botaoOK.png')
+pyautogui.click(centro[0],centro[1],duration=1)
+# rolar pagina para cima depois para sessao downloads
+pyautogui.scroll(1000)
+sleep(1)
+pyautogui.scroll(-2000)
+sleep(1)
+centro = pyautogui.locateCenterOnScreen('excel.png')
+pyautogui.click(centro[0],centro[1]+50,duration=1)
+sleep(1.5)
+centro = pyautogui.locateCenterOnScreen('salvar.png')
+pyautogui.click(centro[0],centro[1],duration=0.5)
+sleep(2)
+centro = pyautogui.locateCenterOnScreen('arquivoPDF.png')
+pyautogui.click(centro[0],centro[1]+50,duration=0.5)
+sleep(1.5)
+centro = pyautogui.locateCenterOnScreen('salvar.png')
+pyautogui.click(centro[0],centro[1],duration=0.5)
+sleep(1)
+pyautogui.alert('..:: VOCÊ TERMINOU ::..')
+
